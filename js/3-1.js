@@ -1,19 +1,36 @@
-// Пример суммирования цены всех товаров в корзине через метод обьекта
+// 1. Добавляем новые поля в обьект по условиям задачи
+// 2. Для full time используем особую запись, которая паредаёт строку
+// 3. Через цикл for of делаем иттерацию по массиву, который за нас был создан в переменной keys
+// 4. Выводим результат в переменную message используя шаблонную строку, которая состоит из свойства ключа и его значения
 
-const goods = {
-  apples: 6,
-  grapes: 3,
-  bread: 4,
-  cheese: 7,
+let message = '';
+
+const user = {
+  age: 20,
+  hobby: 'html',
+  name: 'Mango',
+  premium: true,
 };
 
-const values = Object.values(goods);
-console.log(values);
+//Write code under this line
+user.hobby = 'skydiving';
+user.premium = false;
+user.mood = 'happy';
+user['full time'] = true;
 
-let total = 0;
+const keys = Object.keys(user);
+// Write code under this line
 
-for (const value of values) { 
-    total += value;
+for (const key of keys) {
+  message += `${key} : ${user[key]}\n`;
 }
 
-console.log(total);
+console.log(message);
+/*
+'age : 20 
+hobby : skydiving 
+name : Mango 
+premium : false 
+mood : happy 
+"full time" : true 
+' */
