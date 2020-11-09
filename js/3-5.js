@@ -1,6 +1,23 @@
+// 1. Создаем пустую переменную result которая по умолчанию содержит пустой массив;
+// 2. С помощью цикла for of перебираем масссив обьектов array
+// 3. Добавляем внутрь цикла проверку (условие) на наличие ключа через оператор in
+// 3. Условие - если ключ есть в свойствах, тогда добавляем все значения в массив result. В противном случае возвращаем пустой массив.
+// 5. Возвращаем результат с помощью функции
+
 function getAllPropValues(array, prop) {
   'use strict';
   // Write code under this line
+  let result = [];
+
+  for (const item of array) {
+    if (prop in item) {
+      result.push(item[prop]);
+    } else {
+      result;
+    }
+  }
+
+  return result;
 }
 
 // Объекты и ожидаемый результат
@@ -14,11 +31,11 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-//console.log(getAllPropValues(products, 'name'));
+console.log(getAllPropValues(products, 'name'));
 // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']
 
-//console.log(getAllPropValues(products, 'quantity'));
+console.log(getAllPropValues(products, 'quantity'));
 // [4, 2, 1, 1, 3, 7, 2]
 
-//console.log(getAllPropValues(products, 'category'));
+console.log(getAllPropValues(products, 'category'));
 //  []
