@@ -1,6 +1,20 @@
+// 1. Переводим обьект из условия в массив значений
+// 2. Создаем переменную для суммы всех зарплат с исходым значением 0
+// 3. С помощью цикла for of перебираем массив, суммируем все значения в переменную result
+// 4. Возвращаем переменную result через возрат функции
+
 const countTotalSalary = function (employees) {
   'use strict';
   // Write code under this line
+  const values = Object.values(employees);
+
+  let result = 0;
+
+  for (const value of values) {
+    result += value;
+  }
+
+  return result;
 };
 
 // Объекты и ожидаемый результат
@@ -9,7 +23,7 @@ const developers = {
   poly: 250,
   alfred: 450,
 };
-//console.log(countTotalSalary(developers));
+console.log(countTotalSalary(developers));
 // 1000
 
 const supports = {
@@ -17,5 +31,5 @@ const supports = {
   lux: 150,
   chelsy: 150,
 };
-//console.log(countTotalSalary(supports));
+console.log(countTotalSalary(supports));
 // 500
